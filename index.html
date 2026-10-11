@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FreshCut – Chicken & Mutton</title>
+  <meta name="description" content="Fresh chicken, mutton, fish and eggs delivered to your door." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="#">
+        <span class="brand-mark">F</span>
+        <span>FreshCut</span>
+      </a>
+
+      <button class="location" type="button" aria-label="Change delivery location">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+        <span class="location-text">
+          <small>Deliver to</small>
+          <strong>Anna Nagar, Chennai</strong>
+        </span>
+      </button>
+
+      <label class="search">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M10 4a6 6 0 1 0 3.87 10.59l4.27 4.27 1.41-1.41-4.27-4.27A6 6 0 0 0 10 4Zm0 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z"/></svg>
+        <input id="search" type="search" placeholder="Search for chicken, mutton, fish…" autocomplete="off" />
+      </label>
+
+      <button class="cart-btn" id="openCart" type="button" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM5.2 4H2V2h4.8l.9 2H21l-3.2 8.4a2 2 0 0 1-1.87 1.3H8.1l-.9 1.8H19v2H4l2.2-4.4L5.2 4Z"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <span class="pill">Delivered in 45 mins</span>
+        <h1>Farm-fresh meat,<br />cut the way you like.</h1>
+        <p>Antibiotic-residue free, chilled between 0–4°C and never frozen.</p>
+        <a class="btn btn-primary" href="#products">Shop now</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="hero-plate"><span>🍗</span></div>
+        <div class="hero-badge">
+          <strong>20% OFF</strong>
+          <small>on your first order</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="feature"><span>✓</span><div><strong>Quality checked</strong><small>150+ checks</small></div></div>
+      <div class="feature"><span>❄</span><div><strong>Cold chain</strong><small>0–4°C always</small></div></div>
+      <div class="feature"><span>⚡</span><div><strong>Fast delivery</strong><small>Same day</small></div></div>
+      <div class="feature"><span>₹</span><div><strong>Fair price</strong><small>No hidden fees</small></div></div>
+    </section>
+
+    <section id="products">
+      <div class="section-head">
+        <h2>Shop by category</h2>
+      </div>
+      <div class="categories" id="categories" role="tablist"></div>
+
+      <div class="section-head">
+        <h2 id="listTitle">All products</h2>
+        <select id="sort" class="sort" aria-label="Sort products">
+          <option value="popular">Popular</option>
+          <option value="low">Price: low to high</option>
+          <option value="high">Price: high to low</option>
+        </select>
+      </div>
+      <div class="grid" id="grid"></div>
+      <p class="empty" id="empty" hidden>No products match your search.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 FreshCut · Fresh meat, honestly sourced</div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="overlay" hidden></div>
+  <aside class="drawer" id="drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head">
+      <h3>Your cart</h3>
+      <button class="icon-btn" id="closeCart" type="button" aria-label="Close cart">✕</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot" id="cartFoot">
+      <div class="row"><span>Item total</span><span id="subtotal">₹0</span></div>
+      <div class="row"><span>Delivery</span><span id="delivery">₹0</span></div>
+      <div class="row total"><span>To pay</span><span id="total">₹0</span></div>
+      <p class="hint" id="freeHint"></p>
+      <button class="btn btn-primary btn-block" id="checkout" type="button">Proceed to checkout</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Mobile bottom cart bar -->
+  <button class="cart-bar" id="cartBar" type="button" hidden>
+    <span id="cartBarText">0 items · ₹0</span>
+    <strong>View cart →</strong>
+  </button>
+
+  <script src="app.js"></script>
+</body>
+</html>
