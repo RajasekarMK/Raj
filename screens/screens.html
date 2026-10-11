@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>FreshCut Mobile Screens</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --red: #d7263d; --red-soft: #fdecee; --green: #1f9d55; --green-soft: #e7f6ee;
+    --ink: #1d1d1f; --muted: #6b7280; --line: #ececec; --bg: #f7f7f8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Inter, sans-serif; color: var(--ink); background: #e9e9ee; display: flex; flex-wrap: wrap; gap: 40px; padding: 40px; }
+  .screen { position: relative; width: 390px; height: 844px; background: #fff; overflow: hidden; display: flex; flex-direction: column; }
+  .status { height: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; font-size: 15px; font-weight: 600; }
+  .status .icons { display: flex; gap: 6px; align-items: center; }
+  .bar { display: inline-block; width: 4px; background: var(--ink); border-radius: 1px; margin-right: 1px; }
+  .battery { width: 24px; height: 12px; border: 1.5px solid var(--ink); border-radius: 3px; padding: 1px; }
+  .battery i { display: block; width: 75%; height: 100%; background: var(--ink); border-radius: 1px; }
+  .content { flex: 1; padding: 0 20px; overflow: hidden; }
+  .muted { color: var(--muted); }
+  .btn { display: flex; align-items: center; justify-content: center; height: 54px; border-radius: 14px; background: var(--red); color: #fff; font-weight: 700; font-size: 16px; }
+  .btn.ghost { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
+  .input { height: 54px; border-radius: 14px; border: 1.5px solid var(--line); display: flex; align-items: center; padding: 0 16px; gap: 12px; font-size: 16px; }
+  .input.focus { border-color: var(--red); }
+  .logo { width: 56px; height: 56px; border-radius: 16px; background: var(--red); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 28px; }
+  .topnav { display: flex; align-items: center; justify-content: space-between; height: 52px; }
+  .round { width: 40px; height: 40px; border-radius: 12px; background: var(--bg); display: grid; place-items: center; font-size: 18px; }
+  .tabbar { height: 84px; flex-shrink: 0; border-top: 1px solid var(--line); display: flex; justify-content: space-around; padding-top: 10px; background: #fff; }
+  .tab { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; color: #9ca3af; }
+  .tab svg { width: 24px; height: 24px; }
+  .tab.on { color: var(--red); }
+  .tag { display: inline-block; padding: 3px 7px; border-radius: 6px; background: var(--green); color: #fff; font-size: 10px; font-weight: 700; }
+  .h-title { font-size: 18px; font-weight: 700; }
+  .home-ind { position: absolute; bottom: 8px; left: 50%; width: 134px; height: 5px; border-radius: 3px; background: var(--ink); transform: translateX(-50%); }
+  .stepper { display: inline-flex; align-items: center; height: 34px; border-radius: 10px; background: var(--red); color: #fff; font-weight: 700; }
+  .stepper span { width: 30px; text-align: center; }
+</style>
+</head>
+<body>
+
+<!-- 1. LOGIN -->
+<section class="screen" id="login">
+  <div class="status"><span>9:41</span><span class="icons"><span><i class="bar" style="height:5px"></i><i class="bar" style="height:7px"></i><i class="bar" style="height:9px"></i><i class="bar" style="height:11px"></i></span><span class="battery"><i></i></span></span></div>
+  <div style="height:300px;background:linear-gradient(160deg,#fff5f5,#ffe3e7);display:grid;place-items:center;position:relative">
+    <div style="width:180px;height:180px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:92px;box-shadow:0 20px 50px rgba(215,38,61,.15)">🍗</div>
+    <div style="position:absolute;left:36px;top:60px;width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:32px;box-shadow:0 8px 20px rgba(0,0,0,.06)">🥩</div>
+    <div style="position:absolute;right:40px;bottom:40px;width:64px;height:64px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:32px;box-shadow:0 8px 20px rgba(0,0,0,.06)">🐟</div>
+  </div>
+  <div class="content" style="padding-top:28px">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px"><div class="logo" style="width:36px;height:36px;font-size:18px;border-radius:10px">F</div><strong style="font-size:20px">FreshCut</strong></div>
+    <h1 style="font-size:28px;line-height:1.15;letter-spacing:-.02em">Fresh meat,<br>delivered fast.</h1>
+    <p class="muted" style="margin:8px 0 24px;font-size:15px">Log in or sign up with your mobile number</p>
+    <div class="input focus"><span style="font-weight:600">🇮🇳 +91</span><span style="width:1px;height:24px;background:var(--line)"></span><span>98765 43210</span></div>
+    <div class="btn" style="margin-top:16px">Get OTP</div>
+    <div style="display:flex;align-items:center;gap:12px;margin:22px 0;color:#9ca3af;font-size:13px"><span style="flex:1;height:1px;background:var(--line)"></span>or continue with<span style="flex:1;height:1px;background:var(--line)"></span></div>
+    <div style="display:flex;gap:12px">
+      <div class="btn ghost" style="flex:1;font-size:15px;gap:8px"><b style="color:#4285f4;font-size:18px">G</b> Google</div>
+      <div class="btn ghost" style="flex:1;font-size:15px;gap:8px"><b style="font-size:18px"></b> Apple</div>
+    </div>
+    <p class="muted" style="text-align:center;font-size:12px;margin-top:20px">By continuing, you agree to our <u>Terms</u> & <u>Privacy Policy</u></p>
+  </div>
+  <div class="home-ind"></div>
+</section>
+
+<!-- 2. OTP -->
+<section class="screen" id="otp">
+  <div class="status"><span>9:41</span><span class="icons"><span><i class="bar" style="height:5px"></i><i class="bar" style="height:7px"></i><i class="bar" style="height:9px"></i><i class="bar" style="height:11px"></i></span><span class="battery"><i></i></span></span></div>
+  <div class="content">
+    <div class="topnav"><div class="round">←</div></div>
+    <div style="width:64px;height:64px;border-radius:20px;background:var(--red-soft);display:grid;place-items:center;font-size:30px;margin:24px 0 20px">🔒</div>
+    <h1 style="font-size:26px;letter-spacing:-.02em">Verify your number</h1>
+    <p class="muted" style="margin:8px 0 32px;font-size:15px;line-height:1.5">Enter the 4-digit code sent to<br><b style="color:var(--ink)">+91 98765 43210</b> <span style="color:var(--red);font-weight:600">Edit</span></p>
+    <div style="display:flex;gap:14px;justify-content:space-between">
+      <div class="input" style="width:72px;height:72px;justify-content:center;font-size:28px;font-weight:700">4</div>
+      <div class="input" style="width:72px;height:72px;justify-content:center;font-size:28px;font-weight:700">7</div>
+      <div class="input focus" style="width:72px;height:72px;justify-content:center;font-size:28px;font-weight:700">2</div>
+      <div class="input focus" style="width:72px;height:72px;justify-content:center;font-size:28px;font-weight:300;color:var(--red)">|</div>
+    </div>
+    <p class="muted" style="margin:24px 0;font-size:14px;text-align:center">Didn't get the code? Resend in <b style="color:var(--ink)">00:24</b></p>
+    <div class="btn" style="margin-top:220px">Verify & Continue</div>
+  </div>
+  <div class="home-ind"></div>
+</section>
+
+<!-- 3. HOME / DASHBOARD -->
+<section class="screen" id="home">
+  <div class="status"><span>9:41</span><span class="icons"><span><i class="bar" style="height:5px"></i><i class="bar" style="height:7px"></i><i class="bar" style="height:9px"></i><i class="bar" style="height:11px"></i></span><span class="battery"><i></i></span></span></div>
+  <div class="content" style="padding-top:4px">
+    <div class="topnav">
+      <div><div class="muted" style="font-size:12px">Deliver to</div><div style="font-weight:700;font-size:15px"><span style="color:var(--red)">📍</span> Anna Nagar, Chennai ⌄</div></div>
+      <div class="round" style="background:var(--red-soft)">👤</div>
+    </div>
+    <div class="input" style="background:var(--bg);border-color:var(--bg);height:48px;margin:10px 0 16px;color:#9ca3af;font-size:15px">🔍&nbsp; Search chicken, mutton, fish…</div>
+    <div style="border-radius:20px;background:linear-gradient(135deg,#d7263d,#f0545f);color:#fff;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;height:132px">
+      <div><div style="font-size:12px;opacity:.85;font-weight:600">FIRST ORDER</div><div style="font-size:24px;font-weight:800;margin:4px 0">20% OFF</div><div style="font-size:12px;background:#fff;color:var(--red);padding:5px 10px;border-radius:8px;display:inline-block;font-weight:700">Code: FRESH20</div></div>
+      <div style="font-size:70px">🍗</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px"><span class="h-title">Categories</span><span style="color:var(--red);font-size:13px;font-weight:600">See all</span></div>
+    <div style="display:flex;justify-content:space-between">
+      <div style="text-align:center;font-size:12px;font-weight:600"><div style="width:72px;height:72px;border-radius:20px;background:#fff4e5;display:grid;place-items:center;font-size:34px;margin-bottom:6px;border:1.5px solid var(--red)">🍗</div>Chicken</div>
+      <div style="text-align:center;font-size:12px;font-weight:600"><div style="width:72px;height:72px;border-radius:20px;background:var(--red-soft);display:grid;place-items:center;font-size:34px;margin-bottom:6px">🥩</div>Mutton</div>
+      <div style="text-align:center;font-size:12px;font-weight:600"><div style="width:72px;height:72px;border-radius:20px;background:#e8f4fd;display:grid;place-items:center;font-size:34px;margin-bottom:6px">🐟</div>Fish</div>
+      <div style="text-align:center;font-size:12px;font-weight:600"><div style="width:72px;height:72px;border-radius:20px;background:#fdf8e6;display:grid;place-items:center;font-size:34px;margin-bottom:6px">🥚</div>Eggs</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin:22px 0 12px"><span class="h-title">Bestsellers</span><span style="color:var(--red);font-size:13px;font-weight:600">See all</span></div>
+    <div style="display:flex;gap:12px">
+      <div style="flex:1;border-radius:16px;border:1px solid var(--line);overflow:hidden">
+        <div style="height:96px;background:#fff4e5;display:grid;place-items:center;font-size:50px;position:relative">🍗<span class="tag" style="position:absolute;top:8px;left:8px">-19%</span></div>
+        <div style="padding:10px"><div style="font-weight:600;font-size:14px">Chicken Curry Cut</div><div class="muted" style="font-size:12px;margin:2px 0 8px">500 g · 10–14 pcs</div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><b>₹129</b><span class="stepper"><span>−</span>1<span>+</span></span></div></div>
+      </div>
+      <div style="flex:1;border-radius:16px;border:1px solid var(--line);overflow:hidden">
+        <div style="height:96px;background:var(--red-soft);display:grid;place-items:center;font-size:50px;position:relative">🥩<span class="tag" style="position:absolute;top:8px;left:8px">-10%</span></div>
+        <div style="padding:10px"><div style="font-weight:600;font-size:14px">Mutton Curry Cut</div><div class="muted" style="font-size:12px;margin:2px 0 8px">500 g · 12–16 pcs</div>
+        <div style="display:flex;justify-content:space-between;align-items:center"><b>₹449</b><span style="height:34px;padding:0 14px;border-radius:10px;border:1.5px solid var(--red);color:var(--red);font-weight:700;font-size:13px;display:grid;place-items:center">ADD</span></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="tabbar">
+    <div class="tab on"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 3 10v11h6v-6h6v6h6V10z"/></svg>Home</div>
+    <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Categories</div>
+    <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h15l-2 9H8L6 3H3"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>Cart</div>
+    <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>Orders</div>
+    <div class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>Profile</div>
+  </div>
+</section>
+
+<!-- 4. PRODUCT DETAIL -->
+<section class="screen" id="product">
+  <div style="height:360px;background:#fff4e5;position:relative;display:grid;place-items:center">
+    <div class="status" style="position:absolute;top:0;left:0;right:0"><span>9:41</span><span class="icons"><span><i class="bar" style="height:5px"></i><i class="bar" style="height:7px"></i><i class="bar" style="height:9px"></i><i class="bar" style="height:11px"></i></span><span class="battery"><i></i></span></span></div>
+    <div style="position:absolute;top:56px;left:20px;right:20px;display:flex;justify-content:space-between"><div class="round" style="background:#fff">←</div><div class="round" style="background:#fff;color:var(--red)">♥</div></div>
+    <div style="font-size:150px;margin-top:30px">🍗</div>
+  </div>
+  <div class="content" style="margin-top:-24px;background:#fff;border-radius:24px 24px 0 0;padding-top:24px;position:relative">
+    <span class="tag">BESTSELLER</span>
+    <h1 style="font-size:24px;margin:10px 0 4px;letter-spacing:-.02em">Chicken Curry Cut</h1>
+    <p class="muted" style="font-size:14px;line-height:1.5">Bone-in, skinless pieces from farm-raised chicken. Ideal for curries and biryani.</p>
+    <div style="display:flex;gap:10px;margin:16px 0">
+      <div style="flex:1;background:var(--bg);border-radius:12px;padding:10px;text-align:center"><div class="muted" style="font-size:11px">Pieces</div><b style="font-size:14px">10–14</b></div>
+      <div style="flex:1;background:var(--bg);border-radius:12px;padding:10px;text-align:center"><div class="muted" style="font-size:11px">Serves</div><b style="font-size:14px">2–3</b></div>
+      <div style="flex:1;background:var(--bg);border-radius:12px;padding:10px;text-align:center"><div class="muted" style="font-size:11px">Delivery</div><b style="font-size:14px">45 min</b></div>
+    </div>
+    <div class="h-title" style="font-size:15px;margin-bottom:10px">Select weight</div>
+    <div style="display:flex;gap:10px">
+      <div style="flex:1;height:46px;border-radius:12px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:600">500 g</div>
+      <div style="flex:1;height:46px;border-radius:12px;border:1.5px solid var(--line);display:grid;place-items:center;font-weight:600">1 kg</div>
+      <div style="flex:1;height:46px;border-radius:12px;border:1.5px solid var(--line);display:grid;place-items:center;font-weight:600">2 kg</div>
+    </div>
+  </div>
+  <div style="height:100px;border-top:1px solid var(--line);display:flex;align-items:center;gap:16px;padding:0 20px 14px">
+    <div><b style="font-size:22px">₹129</b> <s class="muted" style="font-size:14px">₹159</s><div style="color:var(--green);font-size:12px;font-weight:600">You save ₹30</div></div>
+    <div class="btn" style="flex:1">Add to cart</div>
+  </div>
+  <div class="home-ind"></div>
+</section>
+
+<!-- 5. CART -->
+<section class="screen" id="cart">
+  <div class="status"><span>9:41</span><span class="icons"><span><i class="bar" style="height:5px"></i><i class="bar" style="height:7px"></i><i class="bar" style="height:9px"></i><i class="bar" style="height:11px"></i></span><span class="battery"><i></i></span></span></div>
+  <div class="content">
+    <div class="topnav"><div class="round">←</div><span class="h-title">My Cart</span><div style="width:40px"></div></div>
+    <div style="background:var(--green-soft);color:var(--green);font-size:13px;font-weight:600;padding:10px 14px;border-radius:12px;margin:8px 0 6px">🎉 You've unlocked FREE delivery</div>
+    <div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)">
+      <div style="width:64px;height:64px;border-radius:14px;background:#fff4e5;display:grid;place-items:center;font-size:34px">🍗</div>
+      <div style="flex:1"><b style="font-size:15px">Chicken Curry Cut</b><div class="muted" style="font-size:12px">500 g</div><b style="font-size:15px">₹258</b></div>
+      <span class="stepper"><span>−</span>2<span>+</span></span>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)">
+      <div style="width:64px;height:64px;border-radius:14px;background:var(--red-soft);display:grid;place-items:center;font-size:34px">🥩</div>
+      <div style="flex:1"><b style="font-size:15px">Mutton Curry Cut</b><div class="muted" style="font-size:12px">1 kg</div><b style="font-size:15px">₹898</b></div>
+      <span class="stepper"><span>−</span>1<span>+</span></span>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)">
+      <div style="width:64px;height:64px;border-radius:14px;background:#fdf8e6;display:grid;place-items:center;font-size:34px">🥚</div>
+      <div style="flex:1"><b style="font-size:15px">Farm Eggs</b><div class="muted" style="font-size:12px">12 pcs</div><b style="font-size:15px">₹89</b></div>
+      <span class="stepper"><span>−</span>1<span>+</span></span>
+    </div>
+    <div class="input" style="margin:16px 0;justify-content:space-between;font-size:15px"><span>🏷️ <b>FRESH20</b> applied</span><span style="color:var(--red);font-weight:600;font-size:13px">Remove</span></div>
+    <div style="background:var(--bg);border-radius:16px;padding:14px 16px;font-size:14px">
+      <div style="display:flex;justify-content:space-between;padding:4px 0" class="muted"><span>Item total</span><span>₹1,245</span></div>
+      <div style="display:flex;justify-content:space-between;padding:4px 0" class="muted"><span>Discount</span><span style="color:var(--green)">−₹249</span></div>
+      <div style="display:flex;justify-content:space-between;padding:4px 0" class="muted"><span>Delivery</span><span style="color:var(--green)">FREE</span></div>
+      <div style="display:flex;justify-content:space-between;padding:10px 0 2px;border-top:1px dashed #d4d4d8;margin-top:6px;font-weight:700;font-size:16px"><span>To pay</span><span>₹996</span></div>
+    </div>
+  </div>
+  <div style="padding:12px 20px 30px;border-top:1px solid var(--line)">
+    <div class="muted" style="font-size:12px;margin-bottom:8px">📍 Deliver to <b style="color:var(--ink)">Home · Anna Nagar</b></div>
+    <div class="btn" style="justify-content:space-between;padding:0 20px"><span>₹996</span><span>Place order →</span></div>
+  </div>
+  <div class="home-ind"></div>
+</section>
+
+<!-- 6. ORDER TRACKING -->
+<section class="screen" id="tracking">
+  <div style="height:330px;position:relative;background:#eef2f5;overflow:hidden">
+    <svg width="390" height="330" style="position:absolute;inset:0">
+      <g stroke="#fff" stroke-width="14" fill="none"><path d="M-10 80 H400"/><path d="M-10 230 H400"/><path d="M90 -10 V340"/><path d="M280 -10 V340"/></g>
+      <g stroke="#fff" stroke-width="6" fill="none"><path d="M-10 160 H400"/><path d="M190 -10 V340"/></g>
+      <path d="M90 270 V230 H190 V160 H280 V110" stroke="var(--red)" stroke-width="5" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/>
+    </svg>
+    <div class="status" style="position:absolute;top:0;left:0;right:0"><span>9:41</span><span class="icons"><span><i class="bar" style="height:5px"></i><i class="bar" style="height:7px"></i><i class="bar" style="height:9px"></i><i class="bar" style="height:11px"></i></span><span class="battery"><i></i></span></span></div>
+    <div class="round" style="position:absolute;top:56px;left:20px;background:#fff">←</div>
+    <div style="position:absolute;left:174px;top:144px;width:34px;height:34px;border-radius:50%;background:var(--ink);display:grid;place-items:center;font-size:18px;box-shadow:0 0 0 6px rgba(29,29,31,.15)">🛵</div>
+    <div style="position:absolute;left:264px;top:84px;width:32px;height:32px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-size:15px;box-shadow:0 0 0 8px rgba(215,38,61,.2)">🏠</div>
+    <div style="position:absolute;left:74px;top:262px;width:32px;height:32px;border-radius:10px;background:#fff;display:grid;place-items:center;font-size:16px;box-shadow:0 4px 10px rgba(0,0,0,.1)">🏪</div>
+  </div>
+  <div class="content" style="margin-top:-24px;background:#fff;border-radius:24px 24px 0 0;padding-top:22px;position:relative">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div><div class="muted" style="font-size:13px">Arriving in</div><div style="font-size:28px;font-weight:800;letter-spacing:-.02em">18 mins</div></div>
+      <span style="background:var(--green-soft);color:var(--green);font-size:12px;font-weight:700;padding:6px 10px;border-radius:8px">On the way</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:14px;background:var(--bg);border-radius:16px;margin:16px 0">
+      <div style="width:44px;height:44px;border-radius:50%;background:#fde1c7;display:grid;place-items:center;font-size:22px">🧑</div>
+      <div style="flex:1"><b style="font-size:15px">Ravi Kumar</b><div class="muted" style="font-size:12px">Delivery partner · ★ 4.8</div></div>
+      <div class="round" style="background:var(--green);color:#fff">📞</div>
+    </div>
+    <div style="font-size:14px">
+      <div style="display:flex;gap:12px;align-items:flex-start"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:12px">✓</span><span style="width:2px;height:26px;background:var(--green)"></span></div><div><b>Order confirmed</b><div class="muted" style="font-size:12px">9:12 AM</div></div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:12px">✓</span><span style="width:2px;height:26px;background:var(--green)"></span></div><div><b>Freshly cut & packed</b><div class="muted" style="font-size:12px">9:24 AM</div></div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:22px;height:22px;border-radius:50%;background:var(--red);box-shadow:0 0 0 5px var(--red-soft)"></span><span style="width:2px;height:26px;background:var(--line)"></span></div><div><b>Out for delivery</b><div class="muted" style="font-size:12px">9:31 AM</div></div></div>
+      <div style="display:flex;gap:12px;align-items:flex-start"><div><span style="display:block;width:22px;height:22px;border-radius:50%;border:2px solid var(--line)"></span></div><div class="muted"><b>Delivered</b></div></div>
+    </div>
+  </div>
+  <div class="home-ind"></div>
+</section>
+
+</body>
+</html>
